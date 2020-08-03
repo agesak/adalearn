@@ -66,7 +66,7 @@ end
 # print MULTIPLE OF 5, otherwise, print NOT A MULTIPLE OF 5.
 puts "Please enter a number"
 num = gets.chomp.to_i
-if num % 5
+if num % 5 == 0
 	puts "MULTIPLE OF 5"
 else
 	puts "NOT A MULTIPLE OF 5"
@@ -90,7 +90,7 @@ puts "Please enter a state"
 state = gets.chomp
 if state == "Washington" || state == "Oregon" || state == "Idaho"
 	puts "This state is in the PNW"
-else "You should move to the PNW. It’s great here!"
+else puts "You should move to the PNW. It’s great here!"
 end		
 
 # Q7
@@ -105,7 +105,7 @@ elsif size == "TALL"
 	oz = 12
 elsif size == "GRANDE"
 	oz = 16
-elsif
+elsif size == "VENTI"
 	oz == 20
 end
 puts "#{oz} ounces"

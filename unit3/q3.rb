@@ -20,3 +20,13 @@ max_petals.times do |i|
 	puts "plucking petal \# #{petal_num}: They love #{end_sentence[i]}"
 	petal_num += 1
 end
+
+
+# another way to do it (given as an example in Ada Learn)
+# number.times do |i|
+#   if i % 2 == 0
+#     puts "they love me!"
+#   else
+#     puts "they love me not"
+#   end
+# end

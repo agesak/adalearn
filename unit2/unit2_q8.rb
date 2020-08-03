@@ -2,6 +2,9 @@
 # I wanted to be able to test this as a script from the command line
 
 
+# test_0001_will result in $210.00 21 earnings and 10 hours       PASS (0.00s)
+# test_0003_will result in $550.00 21 earnings and 50 hours   
+
 # Q8
 # Prompt for rate of pay and hours worked. Calculate gross pay.
 # Provide time-and-a-half for hours worked beyond 40 (e.g.,
