@@ -15,7 +15,7 @@
 # Handle write in votes (done) 
 # Consider how to handle more than 10 votes (done)
 # Consider how to handle more than 3 candidates 
-# Refactor your code so that your code is DRY (Don't Repeat Yourself) (done)
+# Refactor your code so that your code is DRY (Don't Repeat Yourself) (done?)
 
 puts "Welcome to my election voting program \nElection candidates are Sue, John, and Kevin \nHow many people will be voting?"
 constituents = gets.chomp.to_i
