@@ -7,11 +7,17 @@
 # use if statements to convert those strings to boolean values.
 
 bools = []
+acceptable_vals = ["true", "false"]
 
 # accept user input
 5.times do
     puts "Please enter either true or false"
     bool = gets.chomp.downcase
+    # verify user input is correct
+    until acceptable_vals.include?(bool)
+        puts "You didn't enter true or false, please do that"
+        bool = gets.chomp.downcase
+    end
     if bool == "true"
         bool = true
     elsif bool == "false"
