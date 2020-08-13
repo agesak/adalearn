@@ -4,6 +4,6 @@
 # (including 0, but not including 1) to fill the array.
 # Calculate and print the mean of all the elements in the array.
 
-decimals = Array.new(5000) { rand(0.0...1.0)}
-mean = decimals.sum.to_f/decimals.length
+decimals = Array.new(5000) { rand(0.0...1.0) }
+mean = decimals.sum.to_f / decimals.length
 puts mean
