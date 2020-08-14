@@ -49,7 +49,7 @@ end
 
 # optional enhancements # 4
 # require "csv"
-# names = CSV.read("/Users/kareha/Documents/ada/adalearn_unit6_exercise1.csv")
+# names = CSV.read("/Users/kareha/Documents/ada/adalearn/unit6/names.csv")
 # names = names.flatten(1)[1..-1]
 
 # part 3
