@@ -28,7 +28,7 @@ constituents.times do |vote|
     puts "Please input your vote"
     candidate = gets.chomp.downcase
     # ensure chosen candidate is not a write in
-    if !valid_candidates.include?(candidate)
+    until valid_candidates.include?(candidate)
         puts "Please enter a candidate mentioned above"
         candidate = gets.chomp
     end
