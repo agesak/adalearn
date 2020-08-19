@@ -19,60 +19,60 @@ password = gets.chomp
 
 # helper function to verify if password contains capital letter
 def verify_capital(password)
-    capital = false
-    uppercase_letters = ('A'..'Z')
-    password.split("").each do |letter|
-        if uppercase_letters.include?(letter)
-            capital = true
-        end
+  capital = false
+  uppercase_letters = ('A'..'Z')
+  password.split("").each do |letter|
+    if uppercase_letters.include?(letter)
+      capital = true
     end
-    return capital
+  end
+  return capital
 end
 
 # helper function to verify if password contains lowercase letter
 def verify_lowercase(password)
-    lowercase_letters = ('a'..'z')
-    lowercase = false
-    password.split("").each do |letter|
-        if lowercase_letters.include?(letter)
-            lowercase = true
-        end
+  lowercase_letters = ('a'..'z')
+  lowercase = false
+  password.split("").each do |letter|
+    if lowercase_letters.include?(letter)
+      lowercase = true
     end
-    return lowercase
+  end
+  return lowercase
 end
 
 # function to verify the password
 def verify_password(password)
-    verified = false
-    capital = verify_capital(password)
-    lowercase = verify_lowercase(password)
+  verified = false
+  capital = verify_capital(password)
+  lowercase = verify_lowercase(password)
 
-    # first verify numbers
-    if password.count("0-9") == 0
-        validate_sentence = "Please enter a password with a number"
-    # then verify symbols
-    elsif !(password.include?("@") || password.include?("%") || password.include?("*") || password.include?("!"))
-        validate_sentence = "Please enter a password with a symbol (@, %, *, or !)"
-    # then verify password length
-    elsif password.length < 8
-        validate_sentence = "Please enter a password with at least 8 characters"
-    # verify contains capital letter
-    elsif !capital
-        validate_sentence =  "Please enter a password with a capital letter"
-    # verify contains lowercase letter
-    elsif !lowercase
-        validate_sentence = "PLease enter a password with a lowercase letter"
-    else
-        verified = true
-    end
-    return verified, validate_sentence
+  # first verify numbers
+  if password.count("0-9") == 0
+    validate_sentence = "Please enter a password with a number"
+  # then verify symbols
+  elsif !(password.include?("@") || password.include?("%") || password.include?("*") || password.include?("!"))
+    validate_sentence = "Please enter a password with a symbol (@, %, *, or !)"
+  # then verify password length
+  elsif password.length < 8
+    validate_sentence = "Please enter a password with at least 8 characters"
+  # verify contains capital letter
+  elsif !capital
+    validate_sentence =  "Please enter a password with a capital letter"
+  # verify contains lowercase letter
+  elsif !lowercase
+    validate_sentence = "PLease enter a password with a lowercase letter"
+  else
+    verified = true
+  end
+  return verified, validate_sentence
 end
 
 verified, validate_sentence = verify_password(password)
 until verified
-    puts validate_sentence
-    password = gets.chomp
-    verified, validate_sentence = verify_password(password)
+  puts validate_sentence
+  password = gets.chomp
+  verified, validate_sentence = verify_password(password)
 end
 
 # kind of clunky and repetitive of previous until loop
@@ -81,16 +81,16 @@ end
 puts "Congratulations this was an acceptable password, please enter it again to verify it"
 validate_password = gets.chomp
 until password == validate_password
-    puts "Passwords must match, please re-enter either the original or a new password (same password requirement apply)"
+  puts "Passwords must match, please re-enter either the original or a new password (same password requirement apply)"
+  password = gets.chomp
+  verified, validate_sentence = verify_password(password)
+  until verified
+    puts validate_sentence
     password = gets.chomp
     verified, validate_sentence = verify_password(password)
-    until verified
-        puts validate_sentence
-        password = gets.chomp
-        verified, validate_sentence = verify_password(password)
-    end
-    puts "Congratulations this was an acceptable password, please enter it again to verify it"
-    validate_password = gets.chomp
+  end
+  puts "Congratulations this was an acceptable password, please enter it again to verify it"
+  validate_password = gets.chomp
 end
 
 puts "Password accepted and verified"
